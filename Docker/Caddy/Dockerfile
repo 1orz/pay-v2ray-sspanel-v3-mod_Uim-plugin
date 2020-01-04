@@ -1,4 +1,4 @@
-LABEL maintainer="Rico <rico93@outlook.com>"
+
 
 ENV v2ray_version=4.14.0
 
