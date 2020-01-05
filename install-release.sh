@@ -124,6 +124,9 @@ while [[ $# > 0 ]];do
         --nodeuserlimited)
         NODEUSERLIMITED="$2"
         ;;
+        --useip)
+        USEIP="$2"
+        ;;
         *)
                 # unknown option
         ;;
@@ -427,6 +430,13 @@ installV2Ray(){
         then
                 sed -i "s|\"NodeUserLimited\": 4|\"NodeUserLimited\": ${NODEUSERLIMITED}|g" "/etc/v2ray/config.json"
                 colorEcho ${BLUE} "NODEUSERLIMITED:${NODEUSERLIMITED}"
+
+        fi
+
+        if [ ! -z "${USEIP}" ]
+        then
+                sed -i "s|\"UseIP\"|\"${UseIP}\"|g" "/etc/v2ray/config.json"
+                colorEcho ${BLUE} "USEIP:${USEIP}"
 
         fi
 
